@@ -1,4 +1,4 @@
-const apiUrl = "http://blog-lukas.lukaswebdeveloper.com/wp-json/wp/v2";
+const apiUrl = "https://blog-lukas.lukaswebdeveloper.com/wp-json/wp/v2";
 let total;
 
 function getPosts(numberPosts = 10, page = 1, categories = null){
