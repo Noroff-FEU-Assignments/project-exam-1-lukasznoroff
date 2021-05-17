@@ -4,7 +4,7 @@ const articleId = parseInt(getParameterByName("id"));
 getPost(articleId)
 .then((post)=>{
 
-    document.querySelector("title").innerHTML = `Epic Sound | ${post.title.rendered}`
+    document.querySelector("title").innerHTML = `Epic Sound | ${post.title.rendered}`;
 
     console.log(post);
     const articleEl = document.createElement("div");
