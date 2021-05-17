@@ -1,11 +1,11 @@
-.article-element {
-    width: 80vw;
-    margin: auto;
-}
-
 .article-wrap .wp-block-image {
     max-width: 500px;
     margin: 30px 0 30px;
+}
+
+.article-element {
+    width: 80vw;
+    margin: auto;
 }
 
 .article-element {
