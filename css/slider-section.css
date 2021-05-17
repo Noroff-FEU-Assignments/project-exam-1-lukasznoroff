@@ -1,0 +1,243 @@
+.section-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    /* background-color: rgb(85, 79, 79);
+    background-color: #eae7e2;
+    background-color: #919090; */
+    /* box-shadow: 
+  0 2.3px 2.2px -37px rgba(0, 0, 0, 0.02),
+  0 5.5px 5.4px -37px rgba(0, 0, 0, 0.028),
+  0 10.4px 10.1px -37px rgba(0, 0, 0, 0.035),
+  0 18.5px 18.1px -37px rgba(0, 0, 0, 0.042),
+  0 34.7px 33.8px -37px rgba(0, 0, 0, 0.05),
+  0 83px 81px -37px rgba(0, 0, 0, 0.07); */
+}
+
+.last-post-header {
+    width: 80vw;
+    color: #131212;
+    font-size: 5vw;
+    color: #181515;
+    font-weight: 600;
+}
+
+.wrapper {
+    overflow: hidden;
+    height: 95vh;
+    position: relative;
+    width: 90%;
+}
+
+.slider {
+    display: flex;
+    transition: all 1s;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+}
+
+.post {
+    min-width: 16vw;
+    margin-right: 2vw;
+    background-color: rgba(161, 154, 154, 0.644);
+    /* box-shadow:
+    0 0px 3px -10px rgba(0, 0, 0, 0.32), */
+    box-shadow:
+    0 10px 11.6px -50px rgba(0, 0, 0, 0.02),
+    0 23.6px 22.2px -50px rgba(0, 0, 0, 0.028),
+    0 36.8px 31.2px -50px rgba(0, 0, 0, 0.035),
+    0 47.9px 39.1px -50px rgba(0, 0, 0, 0.042),
+    0 57.1px 46.6px -50px rgba(0, 0, 0, 0.05),
+    0 65px 54px -50px rgba(0, 0, 0, 0.07);
+}
+
+.post-image {
+    height: 11vw;
+    width: 100%;   
+}
+
+.category-date-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-post-category{
+    font-size: .7vw;
+    font-weight: 100;
+}
+
+.slider-post-date {
+    font-size: .7vw;
+    font-weight: 100;
+}
+ 
+.post .content-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: .8vw .8vw;
+}
+
+.slider-post-category {
+    margin-bottom: 0.8vw;
+}
+
+.slider-post-header {
+    font-size: .7vw;
+    margin-bottom: 1vw;
+}
+
+.slider-post-text {
+    font-size: .7vw;
+    margin-top: 10px;
+}
+
+.read-more {
+    font-size: .8vw;
+    margin-top: auto;
+    color: var(--color3);
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(116, 107, 107, 0.63);
+    transition: all 1s;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+.read-more:hover {
+    background-color: transparent;
+    color: rgb(189, 180, 180);
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    transition: background .4s, border-bottom .1s .3s, border-left .7s 1s, border-top .6s .7s, border-right .3s .5s;
+}
+
+.read-time-wrapper {
+    width: 100%;
+}
+
+.read-time {
+    display: flex;
+    justify-content: flex-end;
+    font-size: .6vw;
+    margin-top: 1vw;
+}
+
+.slider-btn {
+    position: absolute;
+    background-color: transparent;
+    border: transparent;
+    width: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.slider-btn:active {
+    padding: 19px;
+}
+
+.slider-btn-prev {
+    background-image: url('/images/play.svg');
+    top: 50%;
+    right: 100%;
+    z-index: 99;
+    transform: rotate(180deg);
+}
+
+.slider-btn-next {
+    background-image: url('/images/play.svg');
+    top: 50%;
+    left: 100%;
+    z-index: 99;
+}
+
+/* .loader  {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
+
+  @media screen and (max-width: 800px){
+
+    .section-2 {
+        background-color: var(--bgc-color5); 
+    }
+
+    .wrapper {
+        height: 65vh;
+        width: 100%;
+    }
+
+    .last-post-header {
+        font-size: 40px;
+        text-align: left;
+        width: 95%;
+    }
+
+    .post {
+        min-width: 73vw;
+        margin-left: 14vw;
+    }
+
+    .post-image {
+        height: 40%;
+        height: 40vw;
+    }
+
+    .slider-post-category, .slider-post-date {
+        font-size: 11px;
+    }
+    
+    .post .content-wrap {
+       
+        padding: 10px 10px;
+    }
+
+    .slider-post-category {
+        margin-bottom: 12px;
+    }
+    
+    .slider-post-header {
+        font-size: 12px;
+        margin-bottom: 1vw;
+    }
+    
+    .slider-post-text {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    
+    .read-more {
+        font-size: 12px
+    }
+    .read-time {
+       font-size: 11px;
+    }
+
+    .slider-btn-prev {
+      
+        top: 50%;
+        right: 90%;
+   
+    }
+    
+    .slider-btn-next {
+        top: 50%;
+        left: 90%;
+       
+    }
+  
+}
