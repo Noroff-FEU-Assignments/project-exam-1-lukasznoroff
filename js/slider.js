@@ -68,9 +68,11 @@ function initSlider() {
 
 
     sliderButtons.forEach((button) => {
+
         button.addEventListener("click", (ev) => {
+            // debugger
+
             if (ev.target.classList.contains("slider-btn-prev")) {
-                 
                 if (imageIndex !== 1) {
                     imageIndex--;
                     translateX += offsetWidth;
@@ -81,11 +83,12 @@ function initSlider() {
                 if (imageIndex !== allPosts) {
                     imageIndex++;
                     translateX -= offsetWidth;
+
                 }
             }
 
 
-            sliderPosts.style.transform = `translateX(${translateX}px)`;
+            sliderPosts.style.transform = `translateX(${translateX + 80}px)`;
 
         })
     })

@@ -42,6 +42,10 @@ function getParameterByName(name, url = window.location.href) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+function strip(html){
+  let doc = new DOMParser().parseFromString(html, 'text/html');
+  return doc.body.textContent || "";
+}
 
 const hamburger = document.querySelector(".hamburger");
 const headerLinks = document.querySelector(".header-links");

@@ -26,7 +26,7 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
             
             
             
-            const excerpt = post.content.rendered.substr(0, 70);
+            const excerpt = strip(post.content.rendered.substr(0, 70));
             const blogId = post.id;
             blogContainer.innerHTML +=
                 `
