@@ -47,6 +47,11 @@ function strip(html){
   return doc.body.textContent || "";
 }
 
+function emailIsValid (email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+
 const hamburger = document.querySelector(".hamburger");
 const headerLinks = document.querySelector(".header-links");
 const nav = document.querySelector("nav");

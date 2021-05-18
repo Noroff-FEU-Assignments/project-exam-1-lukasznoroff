@@ -185,13 +185,13 @@
     .last-post-header {
         font-size: 40px;
         text-align: left;
-        width: 95%;
+        width: auto;
     }
 
     .post {
-        min-width: 73vw;
-        margin-left: 14vw;
-        margin-right: 0;
+        margin-right: 10vw;
+        margin-left: 10vw;
+        min-width: 80vw;
     }
 
     .post-image {

@@ -88,7 +88,7 @@ function initSlider() {
             }
 
 
-            sliderPosts.style.transform = `translateX(${translateX + 80}px)`;
+            sliderPosts.style.transform = `translateX(${translateX}px)`;
 
         })
     })
