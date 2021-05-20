@@ -85,17 +85,20 @@ function initSlider() {
                     btnNext.classList.add("btn-next-off");
                 }
             
-
-
             sliderPosts.style.transform = `translateX(${translateX}px)`;
 
         })
+
+    
+
+
+
     })
 
 
 
-
 }
+
 
 
 function init() {

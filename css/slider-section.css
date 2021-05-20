@@ -68,12 +68,12 @@
 }
 
 .slider-post-category{
-    font-size: .7vw;
+    font-size: .8vw;
     font-weight: 100;
 }
 
 .slider-post-date {
-    font-size: .7vw;
+    font-size: .8vw;
     font-weight: 100;
 }
  
@@ -90,11 +90,13 @@
 
 .slider-post-header {
     font-size: .7vw;
-    margin-bottom: 1vw;
+    /* margin-bottom: 1vw; */
+
+    font-size: 1vw;
 }
 
 .slider-post-text {
-    font-size: .7vw;
+    font-size: .9vw;
     margin-top: 10px;
 }
 

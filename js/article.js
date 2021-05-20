@@ -6,7 +6,7 @@ getPost(articleId)
 
     document.querySelector("title").innerHTML = `Epic Sound | ${post.title.rendered}`;
 
-    console.log(post);
+    // console.log(post);
     const articleEl = document.createElement("div");
     articleEl.classList.add("article-element");
 
@@ -15,7 +15,7 @@ getPost(articleId)
     const sliderTitle = post.title.rendered;
     const sliderText = post.content.rendered;
     const postTitle = post["_embedded"]["wp:featuredmedia"][0]["alt_text"];
-    
+        
     
 
     articleEl.innerHTML = `

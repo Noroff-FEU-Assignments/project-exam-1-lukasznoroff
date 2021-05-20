@@ -88,8 +88,7 @@
 }
 
 .blog-link:hover {
-    color: #C46D15;
-    color: var(--bgc-color3);
+    color: var(--color2);
 }
 
 .blog-container {
