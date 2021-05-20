@@ -27,6 +27,7 @@
 .article-image {
     max-width: 40vw;
     height: 100%;
+    cursor: pointer;
 }
 
 .article-post-header {

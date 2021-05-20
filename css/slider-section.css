@@ -162,6 +162,12 @@
     z-index: 99;
 }
 
+
+.slider-btn-next.btn-next-off  {
+    pointer-events: none;
+    opacity: .2;
+  }
+
 /* .loader  {
     width: 150px;
     height: 150px;

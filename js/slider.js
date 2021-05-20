@@ -63,29 +63,29 @@ function initSlider() {
 
     let imageIndex = 1;
     let translateX = 0;
-    const offsetWidth = document.querySelector(".slider").offsetWidth;
-    console.log(offsetWidth);
+    const sliderWidth = document.querySelector(".slider").offsetWidth;
+    const btnNext = document.querySelector(".slider-btn-next");
 
 
     sliderButtons.forEach((button) => {
 
         button.addEventListener("click", (ev) => {
-            // debugger
 
             if (ev.target.classList.contains("slider-btn-prev")) {
                 if (imageIndex !== 1) {
                     imageIndex--;
-                    translateX += offsetWidth;
+                    translateX += sliderWidth;
+                    btnNext.classList.remove("btn-next-off")
                 }
 
 
-            } else {
-                if (imageIndex !== allPosts) {
+            } else if (imageIndex !== allPosts) {
                     imageIndex++;
-                    translateX -= offsetWidth;
-
+                    translateX -= sliderWidth;
+                } if(imageIndex >= 3) {
+                    btnNext.classList.add("btn-next-off");
                 }
-            }
+            
 
 
             sliderPosts.style.transform = `translateX(${translateX}px)`;
