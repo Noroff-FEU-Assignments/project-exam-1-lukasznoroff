@@ -14,15 +14,13 @@ function initSlider() {
             dateFromPost = dateFromPost.split("T")[0];
 
             const sliderImage = post["_embedded"]["wp:featuredmedia"][0].source_url;
-            const imageTitle = post["_embedded"]["wp:featuredmedia"][0]["slug"]
-            console.log(imageTitle);
-
             const category = post["_embedded"]["wp:term"][0][0]["name"];
             const sliderTitle = post.title.rendered;
             const sliderText = post.content.rendered;
             const textValue = sliderText.split(" ").length;
             const excerpt = post.content.rendered.substr(0, 90) + "...";
             const sliderId = post.id;
+            const postTitle = post["_embedded"]["wp:featuredmedia"][0]["slug"];
 
             let wordCounter = 0;
 
@@ -38,7 +36,7 @@ function initSlider() {
             sliderPosts.innerHTML += `
 
                                     <div class="post post-1">
-                                        <img class="post-image" src="${sliderImage}" alt="${imageTitle}">
+                                        <img class="post-image" src="${sliderImage}" alt="${postTitle}">
                                         <div class="content-wrap">
                                             <div class="category-date-wrap">
                                                 <h3 class="slider-post-category">${category.toUpperCase()}</h3>

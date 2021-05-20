@@ -20,6 +20,8 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
             const category = post["_embedded"]["wp:term"][0][0]["name"];
             const blogTitle = post.title.rendered;
             const blogText = post.content.rendered;
+            const postTitle = post["_embedded"]["wp:featuredmedia"][0]["slug"];
+
             
             let dateFromPost = post.date;
             dateFromPost =  dateFromPost.split("T")[0];
@@ -31,7 +33,7 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
             blogContainer.innerHTML +=
                 `
                                         <div class="post-blog">
-                                            <img class="blog-image" src="${blogImage}" alt="">
+                                            <img class="blog-image" src="${blogImage}" alt="${postTitle}">
                                             <div class="blog-category-date-wrap">
                                                 <h3 class="blog-post-category">${category.toUpperCase()}</h3>
                                                 <h3 class="blog-post-date">${dateFromPost}</h3>
