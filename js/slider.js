@@ -89,7 +89,14 @@ function initSlider() {
 
         })
 
-    
+        if (window.matchMedia("(max-width: 800px)").matches ) 
+        {
+            btnNext.classList.remove("btn-next-off");
+           
+            button.style.padding = "44px"
+        
+            
+        }
 
 
 
