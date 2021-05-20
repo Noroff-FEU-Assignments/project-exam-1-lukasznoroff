@@ -101,10 +101,10 @@
 .read-more {
     font-size: .8vw;
     margin-top: auto;
-    color: var(--color3);
+    color: #000;
     text-align: center;
     width: 100%;
-    background-color: rgba(116, 107, 107, 0.63);
+    background-color: #c9c5c5;
     transition: all 1s;
     border-bottom: 1px solid transparent;
     border-left: 1px solid transparent;
@@ -119,7 +119,7 @@
     border-left: 1px solid #000;
     border-top: 1px solid #000;
     border-right: 1px solid #000;
-    transition: background .4s, border-bottom .1s .3s, border-left .7s 1s, border-top .6s .7s, border-right .3s .5s;
+    transition: background .4s, border-bottom .1s .2s, border-left .2s .2s, border-top .6s .2s, border-right .3s .3s;
 }
 
 .read-time-wrapper {
