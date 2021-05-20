@@ -14,11 +14,14 @@ getPost(articleId)
     const category = post["_embedded"]["wp:term"][0][0]["name"];
     const sliderTitle = post.title.rendered;
     const sliderText = post.content.rendered;
+    const postTitle = post["_embedded"]["wp:featuredmedia"][0]["alt_text"];
+    
+    
 
     articleEl.innerHTML = `
     <div class="article-container">
         <h1 class="slider-post-category article-post-category">Category: <span class="article-category">${category.toUpperCase()}</span></h1>
-        <img class="post-image article-image" src="${sliderImage}" alt="">
+        <img class="post-image article-image" src="${sliderImage}" alt="${postTitle}">
         <div class="content-wrap">
             <h3 class="slider-post-header article-post-header">${sliderTitle}</h3>
             <div class="slider-post-text article-post-text">${sliderText}</div>

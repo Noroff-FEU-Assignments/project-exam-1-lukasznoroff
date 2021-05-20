@@ -20,8 +20,8 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
             const category = post["_embedded"]["wp:term"][0][0]["name"];
             const blogTitle = post.title.rendered;
             const blogText = post.content.rendered;
-            const postTitle = post["_embedded"]["wp:featuredmedia"][0]["slug"];
-
+            const postTitle = post["_embedded"]["wp:featuredmedia"][0]["alt_text"];
+            
             
             let dateFromPost = post.date;
             dateFromPost =  dateFromPost.split("T")[0];

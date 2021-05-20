@@ -9,19 +9,20 @@ function initSlider() {
 
         const posts = response.posts;
         posts.forEach((post) => {
-            console.log(post);
             let dateFromPost = post.date;
             dateFromPost = dateFromPost.split("T")[0];
 
             const sliderImage = post["_embedded"]["wp:featuredmedia"][0].source_url;
+            
+            
             const category = post["_embedded"]["wp:term"][0][0]["name"];
             const sliderTitle = post.title.rendered;
             const sliderText = post.content.rendered;
             const textValue = sliderText.split(" ").length;
             const excerpt = post.content.rendered.substr(0, 90) + "...";
             const sliderId = post.id;
-            const postTitle = post["_embedded"]["wp:featuredmedia"][0]["slug"];
-
+            const postTitle = post["_embedded"]["wp:featuredmedia"][0]["alt_text"];
+            
             let wordCounter = 0;
 
             function getWords() {
