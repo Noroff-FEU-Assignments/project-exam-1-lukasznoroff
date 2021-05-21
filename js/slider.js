@@ -13,8 +13,8 @@ function initSlider() {
             dateFromPost = dateFromPost.split("T")[0];
 
             const sliderImage = post["_embedded"]["wp:featuredmedia"][0].source_url;
-            
-            
+
+
             const category = post["_embedded"]["wp:term"][0][0]["name"];
             const sliderTitle = post.title.rendered;
             const sliderText = post.content.rendered;
@@ -22,7 +22,7 @@ function initSlider() {
             const excerpt = post.content.rendered.substr(0, 90) + "...";
             const sliderId = post.id;
             const postTitle = post["_embedded"]["wp:featuredmedia"][0]["alt_text"];
-            
+
             let wordCounter = 0;
 
             function getWords() {
@@ -79,26 +79,21 @@ function initSlider() {
 
 
             } else if (imageIndex !== allPosts) {
-                    imageIndex++;
-                    translateX -= sliderWidth;
-                } if(imageIndex >= 3) {
-                    btnNext.classList.add("btn-next-off");
-                }
-            
+                imageIndex++;
+                translateX -= sliderWidth;
+            } if (imageIndex >= 3) {
+                btnNext.classList.add("btn-next-off");
+            }
+
             sliderPosts.style.transform = `translateX(${translateX}px)`;
 
         })
 
-        if (window.matchMedia("(max-width: 800px)").matches ) 
-        {
-            btnNext.classList.remove("btn-next-off");
-           
-            button.style.padding = "44px"
-        
-            
+        if (window.matchMedia("(max-width: 800px)").matches) {
+
+
+
         }
-
-
 
     })
 

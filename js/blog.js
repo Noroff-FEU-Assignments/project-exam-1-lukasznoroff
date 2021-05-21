@@ -65,6 +65,7 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
     })
 
 
+
 }
 
 

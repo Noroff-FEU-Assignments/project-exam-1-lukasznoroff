@@ -48,3 +48,21 @@
     margin-top: 2px;
     color: #f74646;
 }
+
+.confirmation-box img {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.confirmation-box {
+    text-align: center;
+
+}
+
+.confirmation-box h4 {
+    margin-top: 30px;
+    font-size: 30px;
+    line-height: 1.5;
+}

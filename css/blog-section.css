@@ -230,7 +230,15 @@
     text-align: center;
 }
 
-
+.error-box {
+    /* display: none; */
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border: 2px solid rgba(209, 61, 61, 0.788);
+    padding: 20px;
+  }
 
 
 @media screen and (max-width: 800px){

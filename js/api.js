@@ -19,6 +19,7 @@ function getPosts(numberPosts = 10, page = 1, categories = null){
           posts
         };
     })
+    .catch(()=> errorBox.style.display = "block");
 }
 
 
