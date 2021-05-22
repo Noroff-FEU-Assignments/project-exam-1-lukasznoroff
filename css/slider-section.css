@@ -89,10 +89,9 @@
 }
 
 .slider-post-header {
-    font-size: .7vw;
     /* margin-bottom: 1vw; */
-
     font-size: 1vw;
+    font-weight: bold;
 }
 
 .slider-post-text {
@@ -116,7 +115,7 @@
 
 .read-more:hover {
     background-color: transparent;
-    color: rgb(189, 180, 180);
+    color: rgb(228, 228, 228);
     border-bottom: 1px solid #000;
     border-left: 1px solid #000;
     border-top: 1px solid #000;

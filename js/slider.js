@@ -1,13 +1,27 @@
 const sliderPosts = document.querySelector(".slider");
+const errorBox = document.querySelector(".error-box");
+let slides;
+let slidesPerPage = 4;
+
+if(isMobile()){
+    slidesPerPage = 1;
+}
 
 function initSlider() {
 
     const sliderButtons = document.querySelectorAll(".slider-btn");
-    const allPosts = document.querySelectorAll(".post").length;
+    let totalPosts;
+    // const allPosts = document.querySelectorAll(".post").length;
 
     getPosts().then(response => {
+ 
+        if (!response) {
+            errorBox.style.display = "block";
+            return;
+        }
 
         const posts = response.posts;
+        totalPosts = posts.length;
         posts.forEach((post) => {
             let dateFromPost = post.date;
             dateFromPost = dateFromPost.split("T")[0];
@@ -54,48 +68,57 @@ function initSlider() {
                                     </div>
             `;
         })
-
-
-
-
-    })
-
-    let imageIndex = 1;
-    let translateX = 0;
-    const sliderWidth = document.querySelector(".slider").offsetWidth;
-    const btnNext = document.querySelector(".slider-btn-next");
-
-
-    sliderButtons.forEach((button) => {
-
-        button.addEventListener("click", (ev) => {
-
-            if (ev.target.classList.contains("slider-btn-prev")) {
-                if (imageIndex !== 1) {
-                    imageIndex--;
-                    translateX += sliderWidth;
-                    btnNext.classList.remove("btn-next-off")
-                }
-
-
-            } else if (imageIndex !== allPosts) {
-                imageIndex++;
-                translateX -= sliderWidth;
-            } if (imageIndex >= 3) {
-                btnNext.classList.add("btn-next-off");
-            }
-
-            sliderPosts.style.transform = `translateX(${translateX}px)`;
-
-        })
-
-        if (window.matchMedia("(max-width: 800px)").matches) {
-
-
-
+        slides = sliderPosts.querySelectorAll(".post");
+        console.log(slides);
+        for(let slide of slides) {
+            if (!isMobile) {
+                slide.style.minWidth = `${100 / slidesPerPage}%`;
+                        }
+          
+            
         }
 
+        let imageIndex = 1;
+        let translateX = 0;
+        const sliderWidth = document.querySelector(".slider").offsetWidth;
+       
+        const btnNext = document.querySelector(".slider-btn-next");
+       
+        
+        
+     
+        sliderButtons.forEach((button) => {
+    
+            button.addEventListener("click", (ev) => {
+                
+                if (ev.target.classList.contains("slider-btn-prev")) {
+                    if (imageIndex !== 1) {
+                        imageIndex--;
+                        translateX += sliderWidth;
+                        btnNext.classList.remove("btn-next-off")
+                    }
+    
+                    
+                } else if (imageIndex !== totalPosts) {
+                    imageIndex++;
+                    translateX -= sliderWidth;
+
+                } if (imageIndex >= (totalPosts / slidesPerPage)) {
+                    btnNext.classList.add("btn-next-off");
+                }
+    
+                sliderPosts.style.transform = `translateX(${translateX}px)`;
+    
+            })
+    
+          
+        })
+    
+
+
     })
+
+   
 
 
 

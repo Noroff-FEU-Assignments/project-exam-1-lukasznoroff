@@ -12,15 +12,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         const errors = {};
         if(inputName.value.length < 6){
-            errors["name"] = "name should be more than 5 letters";
+            errors["name"] = "Name should be more than 5 letters";
         }
 
         if(!emailIsValid(inputEmail.value)){
-            errors["email"] = "please provide valid email ";
+            errors["email"] = "Please provide valid email ";
         }
 
         if(inputSubject.value.length < 15){
-            errors["subject"] = "subject should be more than 15 characters long";
+            errors["subject"] = "Subject should be more than 15 characters long";
         }
 
         if(messageEl.value.length < 25) {
@@ -48,7 +48,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
                                     <img src="/images/mail.svg">
                                     <h4>Thank you your message has been send</h4>
             `;
-
             form.innerHTML = "";
             form.appendChild(confirmationEl);
         }

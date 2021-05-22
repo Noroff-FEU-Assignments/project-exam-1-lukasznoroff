@@ -1,6 +1,7 @@
 const apiUrl = "https://blog-lukas.lukaswebdeveloper.com/wp-json/wp/v2";
 let total;
 
+
 function getPosts(numberPosts = 10, page = 1, categories = null){
   let url = `${apiUrl}/posts?_embed&per_page=${numberPosts}&page=${page}`;
   if(categories){
@@ -11,7 +12,6 @@ function getPosts(numberPosts = 10, page = 1, categories = null){
      total = res.headers.get("X-WP-Total");
      console.log(total);
      
-      
       return res.json()})
     .then(posts =>{
         return {
@@ -19,7 +19,13 @@ function getPosts(numberPosts = 10, page = 1, categories = null){
           posts
         };
     })
-    .catch(()=> errorBox.style.display = "block");
+    .catch(()=> {
+      
+      return false;
+    
+    })
+   
+    
 }
 
 
@@ -51,6 +57,10 @@ function strip(html){
 function emailIsValid (email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
+
+function isMobile ()  {
+  return window.matchMedia(`(max-width:800px)`).matches
+};
 
 
 const hamburger = document.querySelector(".hamburger");

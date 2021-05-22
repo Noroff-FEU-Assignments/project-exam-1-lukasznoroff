@@ -7,6 +7,16 @@
     box-shadow: 1px 2px 2px 2px rgba(30,30,30,0.4);
 }
 
+
+.heading-2 {
+    text-align: center;
+    font-size: 35px;
+    font-size: 3vw;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+
 .contact-form .field-wrap {
     margin-bottom: 30px;
     width: 100%;
@@ -17,17 +27,12 @@
     background-color: #f6f6f6;
     border: none;
     padding: 12px 15px;
-    font-size: 15px;
+    font-size: 1vw;
     font-family: "Poppins", sans-serif;
 }
 
-.contact-form input {
-    
-}
-
 .contact-form input:placeholder, .contact-form textarea:placeholder {
-    font-size: 15px;
-
+    font-size: 1vw;
 }
 
 .contact-form textarea {
@@ -44,13 +49,14 @@
 }
 
 .contact-form .msg-err {
-    font-size: 13px;
+    font-size: .8vw;
     margin-top: 2px;
     color: #f74646;
 }
 
 .confirmation-box img {
     width: 200px;
+    width: 20vw;
     margin-left: auto;
     margin-right: auto;
 
@@ -58,11 +64,12 @@
 
 .confirmation-box {
     text-align: center;
-
+    width: 100%;
 }
 
 .confirmation-box h4 {
     margin-top: 30px;
     font-size: 30px;
+    font-size: 2vw;
     line-height: 1.5;
 }

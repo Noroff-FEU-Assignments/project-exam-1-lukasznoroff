@@ -1,7 +1,8 @@
 let totalPostsDisplayed = 0;
 let categoryFilterBtns = document.querySelectorAll(".js-category-filter");
-const postsPerPage = 3;
+const postsPerPage = 10;
 const blogContainer = document.querySelector(".blog-container");
+const errorBox = document.querySelector(".error-box");
 
 function displayPosts(numberPosts = 10, page = 1, categories = null) {
 
@@ -10,6 +11,12 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
     appendLoadMoreSvg();
 
     getPosts(numberPosts, page, categories).then(response => {
+
+       
+      if (!response) {
+        errorBox.style.display = "block";
+      }
+       
         const posts = response.posts;
         const total = response.total;
         totalPostsDisplayed += posts.length;
