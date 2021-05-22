@@ -274,6 +274,9 @@
     .circle4 {
         width: 100px;
         height: 100px;
+        right: auto;
+        left: 0;
+        transform: translate(10%, 50%);
     }
     
     .category {
