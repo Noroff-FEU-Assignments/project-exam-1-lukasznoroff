@@ -3,14 +3,7 @@
   --color2: #9c5831;
   --color2: #9e6037;
   --color3: #A5A2A9;
-  /* --bgc-color: #646464da; */
-  
-  /* --bgc-color: #c2bec0; */
-  /* --bgc-color: #4e4d4d; */
-
   --bgc-color: #6d6c6c;
-  /* --bgc-color: #6E6D6D; */
-
   --bgc-color2: #18191A;
   --bgc-color3: #f07800a4;
   --bgc-color4: #7c4728;
@@ -19,7 +12,7 @@
 
 img {
   max-width: 100%;
-  /* height: auto !important; */
+  height: auto !important;
 }
 
 * { 
