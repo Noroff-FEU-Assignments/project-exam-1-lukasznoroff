@@ -303,7 +303,7 @@ footer {
     top: 0;
     left: 100%;
     z-index: 999;
-    background-color: rgb(185, 83, 83);
+    background-color: #646464;
     transition: all .4s;
   }
 
