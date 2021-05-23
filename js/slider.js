@@ -11,7 +11,6 @@ function initSlider() {
 
     const sliderButtons = document.querySelectorAll(".slider-btn");
     let totalPosts;
-    // const allPosts = document.querySelectorAll(".post").length;
 
     getPosts().then(response => {
  
@@ -27,8 +26,6 @@ function initSlider() {
             dateFromPost = dateFromPost.split("T")[0];
 
             const sliderImage = post["_embedded"]["wp:featuredmedia"][0].source_url;
-
-
             const category = post["_embedded"]["wp:term"][0][0]["name"];
             const sliderTitle = post.title.rendered;
             const sliderText = post.content.rendered;
@@ -46,8 +43,6 @@ function initSlider() {
 
             getWords();
 
-
-
             sliderPosts.innerHTML += `
 
                                     <div class="post post-1">
@@ -58,34 +53,28 @@ function initSlider() {
                                                 <h3 class="slider-post-date">${dateFromPost}</h3>
                                             </div>
                                             <h3 class="slider-post-header">${sliderTitle}</h3>
-
                                         <div class="slider-post-text">${excerpt}</div>
                                             <a class="read-more" href="/pages/article.html?id=${sliderId}">Read more</a>
-                                        
                                         <div class="read-time-wrapper">
                                             <p class="read-time">${wordCounter.toFixed(0)} min read</p>
                                         </div>
                                     </div>
             `;
         })
+        
         slides = sliderPosts.querySelectorAll(".post");
         console.log(slides);
         for(let slide of slides) {
             if (!isMobile) {
                 slide.style.minWidth = `${100 / slidesPerPage}%`;
-                        }
-          
-            
+            }
         }
 
         let imageIndex = 1;
         let translateX = 0;
+
         const sliderWidth = document.querySelector(".slider").offsetWidth;
-       
         const btnNext = document.querySelector(".slider-btn-next");
-       
-        
-        
      
         sliderButtons.forEach((button) => {
     
@@ -97,7 +86,6 @@ function initSlider() {
                         translateX += sliderWidth;
                         btnNext.classList.remove("btn-next-off")
                     }
-    
                     
                 } else if (imageIndex !== totalPosts) {
                     imageIndex++;
@@ -110,18 +98,8 @@ function initSlider() {
                 sliderPosts.style.transform = `translateX(${translateX}px)`;
     
             })
-    
-          
         })
-    
-
-
     })
-
-   
-
-
-
 }
 
 
@@ -130,17 +108,7 @@ function init() {
     if (sliderPosts) {
         initSlider();
     }
-
-
 }
 window.addEventListener("DOMContentLoaded", () => {
     init();
 })
-
-
-
-
-
-
-
-

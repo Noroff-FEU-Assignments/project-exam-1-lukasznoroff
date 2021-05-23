@@ -10,9 +10,8 @@ function getPosts(numberPosts = 10, page = 1, categories = null){
   return  fetch(url)
     .then(res => {
      total = res.headers.get("X-WP-Total");
-     console.log(total);
-     
-      return res.json()})
+    //  console.log(total);
+    return res.json()})
     .then(posts =>{
         return {
           total,
@@ -20,18 +19,13 @@ function getPosts(numberPosts = 10, page = 1, categories = null){
         };
     })
     .catch(()=> {
-      
       return false;
-    
     })
-   
-    
 }
 
 
 function getPost(id){
   // console.log(id);
-  
   return  fetch(`${apiUrl}/posts/${id}?_embed`)
     .then(res => res.json())
     .then(post =>{
@@ -76,7 +70,6 @@ hamburger.addEventListener("click", ()=>{
         nav.style.position = "fixed";
     }else {
         headerLinks.classList.remove("active");
-
     }
 })
 

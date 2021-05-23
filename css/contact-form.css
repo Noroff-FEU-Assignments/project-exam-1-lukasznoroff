@@ -6,8 +6,7 @@
     box-shadow: 1px 2px 2px 2px rgba(30,30,30,0.4);
 }
 
-
-.heading-2 {
+.contact-heading {
     text-align: center;
     font-size: 35px;
     font-size: 3vw;
@@ -38,7 +37,7 @@
     height: 200px;
 }
 
-.contact-form .btn-1 {
+.contact-form .btn-form{
     margin-top: 30px;
     margin-left: auto;
 }
@@ -47,7 +46,7 @@
     text-align: right;
 }
 
-.btn-1 {
+.btn-form {
     display: inline-flex;
     justify-content: center;
     padding: 8px 16px;
@@ -61,7 +60,7 @@
     cursor: pointer;
   }
   
-  .btn-1:hover {
+  .btn-form:hover {
     background-color: #fff;
     color: var(--color2);
   }
@@ -113,7 +112,7 @@
         height: 80vh;
     }
 
-    .heading-2 {
+    .contact-heading {
         margin-bottom: 15px;
         font-size: 30px;
     }
@@ -131,7 +130,7 @@
         height: 120px;
     }
 
-    .contact-form .btn-1 {
+    .contact-form .btn-form {
         margin-top: 10px;
     }
 

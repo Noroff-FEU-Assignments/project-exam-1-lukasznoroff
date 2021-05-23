@@ -26,9 +26,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         if(messageEl.value.length < 25) {
             errors["message"] = "Message should be more than 25 characters long";
         }
-
             
-        // if there has been an error 
         if(Object.keys(errors).length){
             for(let error in errors) {
                 const field = form.querySelector(`.${error}`);
@@ -36,11 +34,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
                 errorEl.classList.add("msg-err");
                 errorEl.innerHTML = errors[error];
                 field.insertAdjacentElement("afterend", errorEl);
-                console.log(error);
-                
+                // console.log(error);
             }
-        // if success 
-        }else {
+                
+            }else {
             const confirmationEl = document.createElement("div");
             confirmationEl.classList.add("confirmation-box");
             confirmationEl.classList.add("email-success");
@@ -52,9 +49,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
             form.innerHTML = "";
             form.appendChild(confirmationEl);
         }
-
-        
     })
+    
     function resetErrorMsg(){
         const messages = form.querySelectorAll(".msg-err");
 

@@ -28,17 +28,13 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
             const blogTitle = post.title.rendered;
             const blogText = post.content.rendered;
             const postTitle = post["_embedded"]["wp:featuredmedia"][0]["alt_text"];
-            
-            
             let dateFromPost = post.date;
             dateFromPost =  dateFromPost.split("T")[0];
-            
-            
-            
             const excerpt = strip(post.content.rendered.substr(0, 70));
             const blogId = post.id;
-            blogContainer.innerHTML +=
-                `
+
+            blogContainer.innerHTML += `
+                
                                         <div class="post-blog">
                                             <img class="blog-image" src="${blogImage}" alt="${postTitle}">
                                             <div class="blog-category-date-wrap">
@@ -53,11 +49,13 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
 
              
         })
+
         if (totalPostsDisplayed < total) {
 
             const btn = document.createElement("button");
             btn.classList.add("btn-load-more");
             btn.dataset.nextPage = page + 1;
+
             if (categories) {
                 btn.dataset.categoryId = categories;
             }
@@ -66,24 +64,21 @@ function displayPosts(numberPosts = 10, page = 1, categories = null) {
         }
         blogContainer.classList.remove("loading");
         removeLoadMoreSvg();
-        
-
-
     })
-
-
-
 }
 
 
 function handleLoadMorePosts() {
+
     document.body.addEventListener("click", (ev) => {
         const target = ev.target;
         if (!target.matches(".btn-load-more")) {
-            return
+            return;
         }
+
         const nextPage = parseInt(target.dataset.nextPage);
         let categories = null;
+
         if (target.dataset.categoryId !== "undefined") {
             categories = target.dataset.categoryId;
         }
@@ -95,7 +90,6 @@ function handleLoadMorePosts() {
 
         displayPosts(postsPerPage, nextPage, categories);
     })
-
 }
 
 function resetPosts() {
@@ -113,7 +107,7 @@ function removeLoadMore() {
     }
 }
 
-const circle4 = document.querySelector(".circle4")
+const circle4 = document.querySelector(".circle4");
 
 function handleFilters() {
 
@@ -135,37 +129,31 @@ function handleFilters() {
             } else {
                 circle4.innerHTML = `<h4 class="active-category">${btn.innerHTML}</h4>`;
                 displayPosts(postsPerPage, 1, categotyId);
-
             }
-
         })
     }
 }
 
 function appendLoadMoreSvg(){
 
-    
-
     const loadMoreCircle = document.createElement("div");
     loadMoreCircle.classList.add("load-more-circle");
     loadMoreCircle.innerHTML = `
-    <svg class="loader" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 50 50">
-    <path fill="#043850" d="M25,5A20.14,20.14,0,0,1,45,22.88a2.51,2.51,0,0,0,2.49,2.26h0A2.52,2.52,0,0,0,50,22.33a25.14,25.14,0,0,0-50,0,2.52,2.52,0,0,0,2.5,2.81h0A2.51,2.51,0,0,0,5,22.88,20.14,20.14,0,0,1,25,5Z">
-        <animateTransform
-                attributeName="transform"
-                type="rotate"
-                from="0 25 25"
-                to="360 25 25"
-                dur=".8s"
-                repeatCount="indefinite"
-        />
-    </path>
-    </svg>`;
-    
+                                <svg class="loader" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 50 50">
+                                <path fill="#043850" d="M25,5A20.14,20.14,0,0,1,45,22.88a2.51,2.51,0,0,0,2.49,2.26h0A2.52,2.52,0,0,0,50,22.33a25.14,25.14,0,0,0-50,0,2.52,2.52,0,0,0,2.5,2.81h0A2.51,2.51,0,0,0,5,22.88,20.14,                          20.14,0,0,1,25,5Z">
+                                    <animateTransform
+                                            attributeName="transform"
+                                            type="rotate"
+                                            from="0 25 25"
+                                            to="360 25 25"
+                                            dur=".8s"
+                                            repeatCount="indefinite"
+                                    />
+                                </path>
+                                </svg>`;
     
 
     blogContainer.insertAdjacentElement("afterend", loadMoreCircle);
-
 }
 
 function removeLoadMoreSvg(){
@@ -189,16 +177,14 @@ function init() {
     handleLoadMorePosts();
     handleFilters();
     displayPosts(postsPerPage, 1);
-
-
 }
+
 window.addEventListener("DOMContentLoaded", () => {
     init();
 })
 
 
-
-const arrowBtn = document.querySelector(".arrow-button ");
+const arrowBtn = document.querySelector(".arrow-button");
 
 window.addEventListener("scroll", () => {
 
