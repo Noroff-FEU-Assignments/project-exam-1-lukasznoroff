@@ -1,5 +1,6 @@
 .cols-wrapper {
     display: flex;
+    height: 80vh;
 }
 
 .col-left-blog-wrapper{
@@ -35,6 +36,7 @@
 .col-right {
     flex: 0 0 40vw;
     background-color: #A5A2A9;
+    line-height: 1;
 }
 
 .categories-container {
@@ -247,6 +249,7 @@
 
     .cols-wrapper {
         display: block;
+        height: auto;
     }
 
     .col-left-blog-wrapper{

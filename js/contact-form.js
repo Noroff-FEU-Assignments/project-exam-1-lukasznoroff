@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         }
 
         if(!emailIsValid(inputEmail.value)){
-            errors["email"] = "Please provide valid email ";
+            errors["email"] = "Please provide valid email";
         }
 
         if(inputSubject.value.length < 15){
@@ -32,7 +32,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
         if(Object.keys(errors).length){
             for(let error in errors) {
                 const field = form.querySelector(`.${error}`);
-
                 const errorEl = document.createElement("p");
                 errorEl.classList.add("msg-err");
                 errorEl.innerHTML = errors[error];
@@ -44,9 +43,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
         }else {
             const confirmationEl = document.createElement("div");
             confirmationEl.classList.add("confirmation-box");
+            confirmationEl.classList.add("email-success");
+           
             confirmationEl.innerHTML = `
                                     <img src="/images/mail.svg">
-                                    <h4>Thank you your message has been send</h4>
+                                    <h4 class="success-email-msg">Thank you your message has been send</h4>
             `;
             form.innerHTML = "";
             form.appendChild(confirmationEl);
